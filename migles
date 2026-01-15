@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOS FOFOQUINHA ☕</title>
+    <style>
+        :root {
+            --pink: #ff758c;
+            --purple: #7158e2;
+            --bg: #ff7eb3;
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--bg), var(--purple));
+            font-family: 'Comic Sans MS', 'Segoe UI', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            color: white;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            width: 90%;
+            max-width: 500px;
+        }
+
+        h1 { font-size: 2.5rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.2); }
+
+        .friends-group {
+            display: flex;
+            justify-content: space-around;
+            margin: 30px 0;
+        }
+
+        .friend {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: transform 0.3s;
+        }
+
+        .friend:hover { transform: translateY(-10px); }
+
+        .avatar {
+            width: 80px;
+            height: 80px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 40px;
+            border: 4px solid var(--pink);
+            margin-bottom: 10px;
+        }
+
+        .btn-sushi {
+            background-color: #32ff7e;
+            color: #1a5a2d;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: all 0.2s;
+        }
+
+        .btn-sushi:active { transform: scale(0.9); }
+
+        #alert-box {
+            height: 60px;
+            margin-top: 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .msg-text {
+            background: white;
+            color: var(--pink);
+            padding: 10px 20px;
+            border-radius: 15px;
+            animation: pop 0.3s ease-out;
+        }
+
+        @keyframes pop {
+            0% { transform: scale(0); }
+            80% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>🚨 QUERO INJUSTIÇA! 🚨</h1>
+    <p>laura vai pra manacapuru sem pagar um jantar??! <br> pode ser hot</p>
+
+    <div class="friends-group">
+        <div class="friend">
+            <div class="avatar">💁🏼‍♀️</div>
+            <span>laura</span>
+        </div>
+        <div class="friend">
+            <div class="avatar">🙋🏻‍♀️</div>
+            <span>soso</span>
+        </div>
+        <div class="friend">
+            <div class="avatar">👩🏻‍🎤</div>
+            <span>gabbie</span>
+        </div>
+    </div>
+
+    <button class="btn-sushi" onclick="askForSushi()">🍣 CADÊ O SUSHI?</button>
+
+    <div id="alert-box"></div>
+</div>
+
+<script>
+    function askForSushi() {
+        const box = document.getElementById('alert-box');
+        const phrases = [
+            "🚨 CHAMANDO TODAS AS UNIDADES! 🍣",
+            "A fofoca está acumulada e o shoyu está esperando!",
+            "Sem sushi, sem paz! Marquem essa data! 🥢",
+            "Se não for pra comer 40 hots, eu nem vou! 😂",
+            "SOS: Nível de fofoca crítico! 📈"
+        ];
+        
+        const randomPhrase = phrases[Math.floor(Math.random() * phrases.length)];
+        
+        box.innerHTML = `<span class="msg-text">${randomPhrase}</span>`;
+        
+        // Efeito de confete básico com emojis
+        for(let i=0; i<10; i++) {
+            createEmoji();
+        }
+    }
+
+    function createEmoji() {
+        const emoji = document.createElement('div');
+        emoji.innerText = '🍣';
+        emoji.style.position = 'fixed';
+        emoji.style.left = Math.random() * 100 + 'vw';
+        emoji.style.top = '100vh';
+        emoji.style.fontSize = '24px';
+        emoji.style.zIndex = '99';
+        emoji.style.transition = 'all 2s ease-out';
+        document.body.appendChild(emoji);
+
+        setTimeout(() => {
+            emoji.style.transform = `translateY(-110vh) rotate(${Math.random() * 360}deg)`;
+            emoji.style.opacity = '0';
+        }, 50);
+
+        setTimeout(() => emoji.remove(), 2000);
+    }
+</script>
+
+</body>
+</html>
