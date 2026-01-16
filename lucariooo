@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para meu Treinador Favorito! 💖</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Um Presente Pokémon para Você!</h1>
+        <p>Feito com carinho para o melhor treinador de Lucario! ✨</p>
+    </header>
+
+    <main>
+        <section id="lucario-section">
+            <h2>Nosso Herói: Lucario!</h2>
+            <div class="pokemon-card">
+                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/448.png" alt="Lucario Fofo">
+                <p>O Lucario é incrível, forte e leal, assim como você! Ele te acompanha em todas as batalhas.</p>
+            </div>
+            <button id="mostrarLucarioDetalhes">Ver Detalhes do Lucario</button>
+            <div id="lucarioDetalhes" class="hidden">
+                <p>Lucario é um Pokémon do tipo Lutador/Aço introduzido na Geração IV. Conhecido por sua habilidade de sentir as auras e ser extremamente protetor com seus treinadores.</p>
+            </div>
+        </section>
+
+        <section id="surpresa-section">
+            <h2>Qual Pokémon Surpresa Você Consegue?</h2>
+            <p>Clique no botão abaixo para descobrir um amigo Pokémon aleatório que quer te acompanhar!</p>
+            <button id="gerarPokemonSurpresa">Descobrir Pokémon!</button>
+            <div id="pokemonSurpresaResultado" class="pokemon-card hidden">
+                <h3 id="nomePokemonSurpresa"></h3>
+                <img id="imagemPokemonSurpresa" src="" alt="Pokémon Surpresa">
+                <p id="tipoPokemonSurpresa"></p>
+            </div>
+        </section>
+
+        <section id="personalidade-test-section">
+            <h2>Descubra Seu Pokémon Guardião!</h2>
+            <p>Responda rapidinho e veja qual Pokémon combina mais com sua aura!</p>
+            <div class="question-block">
+                <p>1. Como você se descreve em uma palavra?</p>
+                <input type="radio" id="doce" name="q1" value="doce"><label for="doce"> Doce e Carinhoso(a)</label><br>
+                <input type="radio" id="forte" name="q1" value="forte"><label for="forte"> Forte e Determinado(a)</label><br>
+                <input type="radio" id="curioso" name="q1" value="curioso"><label for="curioso"> Curioso(a) e Aventureiro(a)</label><br>
+                <input type="radio" id="calmo" name="q1" value="calmo"><label for="calmo"> Calmo(a) e Sábio(a)</label><br>
+            </div>
+            <div class="question-block">
+                <p>2. Qual sua atividade favorita?</p>
+                <input type="radio" id="abraços" name="q2" value="abraços"><label for="abraços"> Dar e receber abraços</label><br>
+                <input type="radio" id="desafios" name="q2" value="desafios"><label for="desafios"> Superar desafios</label><br>
+                <input type="radio" id="explorar" name="q2" value="explorar"><label for="explorar"> Explorar novos lugares</label><br>
+                <input type="radio" id="ler" name="q2" value="ler"><label for="ler"> Ler e aprender</label><br>
+            </div>
+            <button id="finalizarTeste">Ver Meu Pokémon Guardião</button>
+            <div id="resultadoPersonalidade" class="pokemon-card hidden">
+                <h3 id="nomePokemonGuardião"></h3>
+                <img id="imagemPokemonGuardião" src="" alt="Pokémon Guardião">
+                <p id="descricaoPokemonGuardião"></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Feito com muito amor para o melhor treinador Pokémon! 💖</p>
+    </footer>
+    <!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para meu Treinador Favorito! 💖</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Um Presente Pokémon para Você!</h1>
+        <p>Feito com carinho para o melhor treinador de Lucario! ✨</p>
+    </header>
+
+    <main>
+        <section id="lucario-section">
+            <h2>Nosso Herói: Lucario!</h2>
+            <div class="pokemon-card">
+                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/448.png" alt="Lucario Fofo">
+                <p>O Lucario é incrível, forte e leal, assim como você! Ele te acompanha em todas as batalhas.</p>
+            </div>
+            <button id="mostrarLucarioDetalhes">Ver Detalhes do Lucario</button>
+            <div id="lucarioDetalhes" class="hidden">
+                <p>Lucario é um Pokémon do tipo Lutador/Aço introduzido na Geração IV. Conhecido por sua habilidade de sentir as auras e ser extremamente protetor com seus treinadores.</p>
+            </div>
+        </section>
+
+        <section id="surpresa-section">
+            <h2>Qual Pokémon Surpresa Você Consegue?</h2>
+            <p>Clique no botão abaixo para descobrir um amigo Pokémon aleatório que quer te acompanhar!</p>
+            <button id="gerarPokemonSurpresa">Descobrir Pokémon!</button>
+            <div id="pokemonSurpresaResultado" class="pokemon-card hidden">
+                <h3 id="nomePokemonSurpresa"></h3>
+                <img id="imagemPokemonSurpresa" src="" alt="Pokémon Surpresa">
+                <p id="tipoPokemonSurpresa"></p>
+            </div>
+        </section>
+
+        <section id="personalidade-test-section">
+            <h2>Descubra Seu Pokémon Guardião!</h2>
+            <p>Responda rapidinho e veja qual Pokémon combina mais com sua aura!</p>
+            <div class="question-block">
+                <p>1. Como você se descreve em uma palavra?</p>
+                <input type="radio" id="doce" name="q1" value="doce"><label for="doce"> Doce e Carinhoso(a)</label><br>
+                <input type="radio" id="forte" name="q1" value="forte"><label for="forte"> Forte e Determinado(a)</label><br>
+                <input type="radio" id="curioso" name="q1" value="curioso"><label for="curioso"> Curioso(a) e Aventureiro(a)</label><br>
+                <input type="radio" id="calmo" name="q1" value="calmo"><label for="calmo"> Calmo(a) e Sábio(a)</label><br>
+            </div>
+            <div class="question-block">
+                <p>2. Qual sua atividade favorita?</p>
+                <input type="radio" id="abraços" name="q2" value="abraços"><label for="abraços"> Dar e receber abraços</label><br>
+                <input type="radio" id="desafios" name="q2" value="desafios"><label for="desafios"> Superar desafios</label><br>
+                <input type="radio" id="explorar" name="q2" value="explorar"><label for="explorar"> Explorar novos lugares</label><br>
+                <input type="radio" id="ler" name="q2" value="ler"><label for="ler"> Ler e aprender</label><br>
+            </div>
+            <button id="finalizarTeste">Ver Meu Pokémon Guardião</button>
+            <div id="resultadoPersonalidade" class="pokemon-card hidden">
+                <h3 id="nomePokemonGuardião"></h3>
+                <img id="imagemPokemonGuardião" src="" alt="Pokémon Guardião">
+                <p id="descricaoPokemonGuardião"></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Feito com muito amor para o melhor treinador Pokémon! 💖</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+    <script src="script.js"></script>
+</body>
+</html>
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to right, #6dd5ed, #2193b0); /* Fundo gradiente azul-água */
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #ffcb05; /* Amarelo Pokémon */
+    color: #2a75bb; /* Azul Pokémon */
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-bottom: 5px solid #3c5aa6; /* Azul escuro */
+}
+
+h1 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    text-shadow: 3px 3px 0 #fff; /* Efeito pixelado */
+}
+
+h2 {
+    font-family: 'Press Start 2P', cursive;
+    color: #3c5aa6; /* Azul escuro */
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-size: 1.8em;
+    text-shadow: 2px 2px 0 #ffcb05; /* Amarelo Pokémon */
+}
+
+p {
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+main {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    margin: 30px auto;
+    max-width: 900px;
+    width: 90%;
+    text-align: center;
+}
+
+section {
+    margin-bottom: 50px;
+    border-bottom: 2px dashed #ccc;
+    padding-bottom: 30px;
+}
+
+section:last-of-type {
+    border-bottom: none;
+}
+
+.pokemon-card {
+    background-color: #e6f7ff; /* Azul claro */
+    border: 3px solid #6dd5ed;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 350px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.pokemon-card:hover {
+    transform: translateY(-5px);
+}
+
+.pokemon-card img {
+    max-width: 150px;
+    height: auto;
+    margin-bottom: 15px;
+    image-rendering: pixelated; /* Para sprites Pokémon ficarem nítidos */
+}
+
+button {
+    background-color: #3c5aa6; /* Azul escuro Pokémon */
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+    background-color: #2a75bb; /* Azul médio Pokémon */
+    transform: translateY(-2px);
+}
+
+.hidden {
+    display: none;
+}
+
+.question-block {
+    background-color: #f0f8ff; /* Azul bebê */
+    border: 1px solid #a8dadc;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 15px auto;
+    text-align: left;
+    max-width: 500px;
+}
+
+.question-block p {
+    font-weight: bold;
+    color: #457b9d;
+    margin-bottom: 10px;
+}
+
+.question-block label {
+    margin-left: 8px;
+    cursor: pointer;
+}
+
+.question-block input[type="radio"] {
+    margin-right: 5px;
+    accent-color: #3c5aa6; /* Cor do rádio button */
+}
+
+footer {
+    margin-top: 50px;
+    padding: 20px;
+    background-color: #ffcb05; /* Amarelo Pokémon */
+    color: #3c5aa6;
+    text-align: center;
+    width: 100%;
+    border-top: 5px solid #3c5aa6;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);}
