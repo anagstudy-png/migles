@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jardim da Gabbie</title>
+    <style>
+        /* --- ESTILOS VISUAIS (DESIGN PASTEL) --- */
+        body {
+            background-color: #fdfcf0; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #6d8299;
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        header {
+            margin-top: 50px;
+            position: relative;
+            z-index: 2;
+        }
+
+        h1 {
+            color: #ffb7b2; /* Rosa pastel */
+            font-size: 3.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.05);
+            margin-bottom: 5px;
+        }
+
+        p.subtitle {
+            font-style: italic;
+            margin-bottom: 30px;
+        }
+
+        /* Seção de Música */
+        .music-box {
+            margin: 20px auto 40px;
+            padding: 15px;
+            background: #e2f0cb; /* Verde pastel */
+            border-radius: 50px;
+            width: fit-content;
+            z-index: 2;
+            position: relative;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        /* Botões de Interação */
+        .reveal-section {
+            z-index: 2;
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .reveal-grid {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .reveal-card {
+            background: white;
+            padding: 20px;
+            border-radius: 25px;
+            width: 260px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.03);
+            transition: transform 0.3s ease;
+        }
+
+        .reveal-card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Estilo dos Botões */
+        .btn-reveal {
+            border: none;
+            padding: 14px;
+            font-size: 1.1rem;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: white;
+            font-weight: bold;
+            width: 100%;
+            box-shadow: 0 4px 0px rgba(0,0,0,0.1);
+        }
+
+        .btn-poke { background-color: #c7ceea; } /* Azul pastel */
+        .btn-flower { background-color: #ffb7b2; } /* Rosa pastel */
+        .btn-card { background-color: #b5ead7; } /* Verde/Menta pastel */
+
+        .btn-reveal:active {
+            transform: translateY(2px);
+            box-shadow: none;
+        }
+
+        /* Conteúdo Revelado */
+        .content {
+            margin-top: 20px;
+            display: none; 
+            animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .content img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 15px;
+            margin-bottom: 15px;
+        }
+
+        /* Galeria Inferior */
+        .gallery {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin: 60px 0;
+            z-index: 2;
+            position: relative;
+        }
+
+        .flower-frame {
+            border: 6px solid #ffccf9; /* Lilás pastel */
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; 
+            overflow: hidden;
+            width: 180px;
+            height: 180px;
+            background: white;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.05);
+        }
+
+        .flower-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Pétalas Caindo */
+        .petal {
+            position: fixed;
+            top: -10%;
+            z-index: 1;
+            user-select: none;
+            pointer-events: none;
+            animation: fall linear forwards;
+        }
+
+        @keyframes fall {
+            to { transform: translateY(110vh) rotate(360deg); }
+        }
+
+        @keyframes popIn {
+            0% { transform: scale(0.5); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Jardim da Gabbie 🌸</h1>
+        <p class="subtitle">Um lugar especial para uma pessoa especial.</p>
+    </header>
+
+    <main>
+        <section class="music-box">
+    <h3>Nossa Música 🎵</h3>
+    <audio id="player" controls style="width: 250px;">
+        <source src="" type="audio/mpeg">
+        Seu navegador não suporta áudio.
+    </audio>
+</section>
+
+        <section class="reveal-section">
+            <h2>Quem seria você se fosse...</h2>
+            
+            <div class="reveal-grid">
+                <div class="reveal-card">
+                    <button class="btn-reveal btn-poke" onclick="toggleReveal('poke')">Um Pokémon?</button>
+                    <div id="poke" class="content">
+                        <img src="https://uploads.onecompiler.io/44asgabm3/44asjsq66/Waddle%20Waddle.jpg" alt="Eevee">
+                        <p>Você seria a <strong>Eevee</strong>!<br>Fofa, versátil e cheia de luz.</p>
+                    </div>
+                </div>
+
+                <div class="reveal-card">
+                    <button class="btn-reveal btn-flower" onclick="toggleReveal('flower')">Uma Flor?</button>
+                    <div id="flower" class="content">
+                        <img src="https://uploads.onecompiler.io/44asgabm3/44asjsq66/Aesthetic.jpg" alt="Tulipas">
+                        <p>Você seria uma <strong>Tulipa</strong>!<br>Símbolo de um amor perfeito e delicado.</p>
+                    </div>
+                </div>
+
+                <div class="reveal-card">
+                    <button class="btn-reveal btn-card" onclick="toggleReveal('card')">Uma Carta?</button>
+                    <div id="card" class="content">
+                        <img src="https://uploads.onecompiler.io/44asgabm3/44asjsq66/Sylveon%20pokemon%20card%20VMAX%20(Alternate%20Art%20Secret)%20de%20la%20expansi%C3%B3n%20Evolving%20Skies.jpg" alt="Carta Sylveon">
+                        <p>A carta da <strong>Sylveon</strong>!<br>Doce, forte e encantadora.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="gallery">
+            <div class="flower-frame"><img src="https://uploads.onecompiler.io/44asgabm3/44asjsq66/IMG-20250813-WA0199.jpg" alt="Gabbie"></div>
+            <div class="flower-frame"><img src="https://uploads.onecompiler.io/44asgabm3/44asjsq66/20250628_013725.jpg" alt="Gabbie"></div>
+            <div class="flower-frame"><img src="https://uploads.onecompiler.io/44asgabm3/44asjsq66/IMG-20250606-WA0108.jpg" alt="Gabbie"></div>
+        </section>
+    </main>
+
+    <script>
+        /* --- LOGICA DE INTERAÇÃO --- */
+
+        // Função para mostrar ou esconder os cards
+        function toggleReveal(id) {
+            const element = document.getElementById(id);
+            // Verifica se está visível
+            if (element.style.display === "block") {
+                element.style.display = "none";
+            } else {
+                element.style.display = "block";
+            }
+        }
+
+        // Função para criar as pétalas caindo
+        function createPetal() {
+            const petal = document.createElement('div');
+            petal.classList.add('petal');
+            
+            // Variedade de elementos caindo
+            const items = ['🌸', '✨', '💮', '🌷', '🤍'];
+            petal.innerText = items[Math.floor(Math.random() * items.length)];
+            
+            petal.style.left = Math.random() * 100 + 'vw';
+            petal.style.animationDuration = Math.random() * 3 + 4 + 's'; // Entre 4 e 7 segundos
+            petal.style.fontSize = Math.random() * 10 + 15 + 'px';
+            petal.style.opacity = Math.random() * 0.5 + 0.5;
+            
+            document.body.appendChild(petal);
+            
+            // Remove do site após cair para não pesar
+            setTimeout(() => {
+                petal.remove();
+            }, 7000);
+        }
+
+        // Gera uma pétala a cada 400 milissegundos
+        setInterval(createPetal, 400);
+    </script>
+</body>
+</html>
